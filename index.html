@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Hyundai Institute</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hyundai Institute — Global AI Research Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Barlow:wght@200;300;400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ░░ TEXTURE GRAIN ░░ -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ░░ CUSTOM CURSOR ░░ -->
+  <div class="c-dot" id="cDot"></div>
+  <div class="c-ring" id="cRing"></div>
+
+  <!-- ░░ PROGRESS BAR ░░ -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ══════════════════════════════════════
+       NAV
+  ══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a class="nav-logo" href="#hero">
+      <span class="logo-mark">H</span>
+      <span class="logo-wordmark">yundai Institute</span>
+    </a>
+    <ul class="nav-ul">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#structure">Structure</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#testimonials">Alumni</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="nav-apply" href="#apply">Apply Now →</a>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer" id="drawer">
+    <button class="drawer-close" id="drawerClose">✕</button>
+    <nav class="drawer-nav">
+      <a href="#about" class="d-link">About</a>
+      <a href="#research" class="d-link">Research</a>
+      <a href="#structure" class="d-link">Structure</a>
+      <a href="#process" class="d-link">Process</a>
+      <a href="#programs" class="d-link">Programs</a>
+      <a href="#testimonials" class="d-link">Alumni</a>
+      <a href="#faq" class="d-link">FAQ</a>
+      <a href="#apply" class="d-link d-apply">Apply Now</a>
+    </nav>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- animated bg canvas -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- vertical side labels -->
+    <div class="hero-side-left">
+      <span>AI · DATA SCIENCE · ROBOTICS</span>
+    </div>
+    <div class="hero-side-right">
+      <span>EST. 2018 · SEOUL · GLOBAL</span>
+    </div>
+
+    <div class="hero-center">
+      <div class="hero-eyebrow">
+        <span class="he-dot pulse"></span>
+        <span class="he-mono">Now Accepting Q3 2026 Applications</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="ht-word ht-serif">Hyundai</span>
+        <span class="ht-word ht-condensed">Institute</span>
+      </h1>
+
+      <div class="hero-rule"></div>
+
+      <p class="hero-sub">
+        A world-class research organization where ambitious students and professionals
+        become <em>published academics</em>—through AI, real data, and rigorous mentorship.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn-fill" onclick="goTo('apply')">
+          Join the Program
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="btn-outline" onclick="goTo('about')">
+          Explore the Lab
+        </button>
+      </div>
+
+      <div class="hero-tags">
+        <span class="tag">IEEE Certified</span>
+        <span class="tag">arXiv Publications</span>
+        <span class="tag">NIW Portfolio</span>
+        <span class="tag">48+ Countries</span>
+      </div>
+    </div>
+
+    <!-- floating stats -->
+    <div class="hero-stats-bar">
+      <div class="hsb-item">
+        <span class="hsb-num" data-target="247">0</span><span class="hsb-unit">+</span>
+        <span class="hsb-label">Papers Published</span>
+      </div>
+      <div class="hsb-sep"></div>
+      <div class="hsb-item">
+        <span class="hsb-num" data-target="96">0</span><span class="hsb-unit">%</span>
+        <span class="hsb-label">Acceptance Rate</span>
+      </div>
+      <div class="hsb-sep"></div>
+      <div class="hsb-item">
+        <span class="hsb-num" data-target="800">0</span><span class="hsb-unit">+</span>
+        <span class="hsb-label">Alumni Worldwide</span>
+      </div>
+      <div class="hsb-sep"></div>
+      <div class="hsb-item">
+        <span class="hsb-num" data-target="48">0</span><span class="hsb-unit">+</span>
+        <span class="hsb-label">Countries</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ TICKER BAND ░░ -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Hyundai Institute</span><em>◆</em>
+      <span>IEEE Publications</span><em>◆</em>
+      <span>arXiv Submissions</span><em>◆</em>
+      <span>Medical AI Research</span><em>◆</em>
+      <span>NIW Portfolio Strategy</span><em>◆</em>
+      <span>Autonomous Robotics</span><em>◆</em>
+      <span>ML & Deep Learning</span><em>◆</em>
+      <span>Global Research Network</span><em>◆</em>
+      <span>Education Analytics</span><em>◆</em>
+      <span>Smart Logistics AI</span><em>◆</em>
+      <span>Hyundai Institute</span><em>◆</em>
+      <span>IEEE Publications</span><em>◆</em>
+      <span>arXiv Submissions</span><em>◆</em>
+      <span>Medical AI Research</span><em>◆</em>
+      <span>NIW Portfolio Strategy</span><em>◆</em>
+      <span>Autonomous Robotics</span><em>◆</em>
+      <span>ML & Deep Learning</span><em>◆</em>
+      <span>Global Research Network</span><em>◆</em>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       01 · ABOUT
+  ══════════════════════════════════════ -->
+  <section class="s" id="about">
+    <div class="wrap">
+      <div class="s-label">01 / About</div>
+
+      <div class="about-layout">
+        <div class="about-text r">
+          <h2 class="s-h2">
+            Transforming Students<br>
+            Into <em class="sc">Published Researchers</em>
+          </h2>
+          <p class="lead-p">
+            Hyundai Institute is not a course or a bootcamp. It is a
+            precision-designed research ecosystem where every participant
+            produces work that matters—peer-reviewed, globally indexed,
+            and career-defining.
+          </p>
+          <p class="body-p">
+            Since 2018, we have guided students, professionals, and aspiring
+            academics through the full research lifecycle: from initial topic
+            scoping through dataset collection, model training, academic writing,
+            and final submission to IEEE journals, arXiv, and Scopus-indexed
+            conferences. Our model is mentorship-first, rigor-always.
+          </p>
+          <p class="body-p">
+            Whether you are a high school student building your university portfolio,
+            a graduate student seeking published credentials, or a professional
+            building an NIW immigration case, Hyundai Institute has a structured
+            track designed around your exact goals.
+          </p>
+          <div class="about-badges">
+            <div class="ab">
+              <div class="ab-icon">◈</div>
+              <div><strong>Mentorship-First</strong><span>1-on-1 PhD mentor for every researcher</span></div>
+            </div>
+            <div class="ab">
+              <div class="ab-icon">◈</div>
+              <div><strong>Real Datasets</strong><span>No simulated exercises — live data, real impact</span></div>
+            </div>
+            <div class="ab">
+              <div class="ab-icon">◈</div>
+              <div><strong>Publication Commitment</strong><span>We work with you until your paper is accepted</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards r">
+          <div class="acard">
+            <div class="acard-n">01</div>
+            <h3>Education</h3>
+            <p>Structured AI, Python, Data Science, and Machine Learning curriculum designed specifically for aspiring researchers at every level.</p>
+            <div class="acard-tags"><span>Python</span><span>ML</span><span>Deep Learning</span><span>NLP</span></div>
+          </div>
+          <div class="acard acard-mid">
+            <div class="acard-n">02</div>
+            <h3>Research</h3>
+            <p>Real dataset-based projects guided by expert mentors—from hypothesis to experimental result—with the express goal of publication.</p>
+            <div class="acard-tags"><span>Datasets</span><span>Experiments</span><span>Ablations</span><span>Papers</span></div>
+          </div>
+          <div class="acard">
+            <div class="acard-n">03</div>
+            <h3>Outcomes</h3>
+            <p>IEEE papers, arXiv submissions, NIW immigration portfolios, and PhD application materials that open doors at the world's top institutions.</p>
+            <div class="acard-tags"><span>IEEE</span><span>arXiv</span><span>NIW EB-2</span><span>PhD Apps</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       02 · RESEARCH AREAS
+  ══════════════════════════════════════ -->
+  <section class="s s-dark" id="research">
+    <div class="wrap">
+      <div class="s-label">02 / Research Focus Areas</div>
+      <div class="research-top r">
+        <h2 class="s-h2">Five Domains of<br><em class="sc">Scientific Excellence</em></h2>
+        <p class="section-intro">Our research spans five high-impact domains — each selected for their global relevance, publication potential, and career-transforming outcomes.</p>
+      </div>
+
+      <div class="r-list">
+        <div class="rrow r">
+          <div class="rrow-num">01</div>
+          <div class="rrow-content">
+            <h3>Artificial Intelligence & Machine Learning</h3>
+            <p>Deep neural architectures, transformer models, reinforcement learning, federated learning systems, and applied ML for production environments. We publish both foundational theory and real-world system papers in IEEE, NeurIPS-aligned venues, and AAAI conferences.</p>
+            <div class="rrow-tags">
+              <span>Transformers</span><span>Federated Learning</span><span>Neural Nets</span><span>RL</span><span>Applied AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rrow r">
+          <div class="rrow-num">02</div>
+          <div class="rrow-content">
+            <h3>Medical AI — EEG, MRI & Health Data</h3>
+            <p>Clinical AI breakthroughs through deep analysis of EEG brainwave signals, MRI volumetric imaging, electronic health records, and wearable biosensor streams. Research with direct humanitarian implications and strong publication track records in IEEE EMBC, TBME, and biomedical informatics journals.</p>
+            <div class="rrow-tags">
+              <span>EEG Signals</span><span>MRI Imaging</span><span>Health Records</span><span>Biosensors</span><span>Clinical AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rrow r">
+          <div class="rrow-num">03</div>
+          <div class="rrow-content">
+            <h3>Autonomous Systems & Robotics</h3>
+            <p>Intelligent agents, computer vision pipelines, sensor fusion architectures, SLAM (Simultaneous Localization and Mapping), and real-world deployment of autonomous systems. Research bridging simulation and physical deployment at IEEE ICRA, IROS, and ICCV.</p>
+            <div class="rrow-tags">
+              <span>Computer Vision</span><span>SLAM</span><span>Sensor Fusion</span><span>Autonomous Agents</span><span>Sim2Real</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rrow r">
+          <div class="rrow-num">04</div>
+          <div class="rrow-content">
+            <h3>Human Behavior & Education Analytics</h3>
+            <p>Data-driven computational models of human cognition, student learning trajectories, engagement prediction, dropout prevention, and behavioral classification. Research advancing the science of education and human-computer interaction at EDM, LAK, and CHI conferences.</p>
+            <div class="rrow-tags">
+              <span>Learning Analytics</span><span>Behavioral ML</span><span>Cognitive Models</span><span>EdTech</span><span>HCI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rrow r">
+          <div class="rrow-num">05</div>
+          <div class="rrow-content">
+            <h3>Smart Logistics & Optimization Systems</h3>
+            <p>AI-powered supply chain intelligence, multi-objective route optimization, demand forecasting, warehouse automation, and operational efficiency modeling. Research with direct commercial deployment potential published in transportation science and operations research journals.</p>
+            <div class="rrow-tags">
+              <span>Route Optimization</span><span>Supply Chain AI</span><span>Demand Forecasting</span><span>Warehouse ML</span><span>OR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       03 · STRUCTURE
+  ══════════════════════════════════════ -->
+  <section class="s" id="structure">
+    <div class="wrap">
+      <div class="s-label">03 / Lab Structure</div>
+      <h2 class="s-h2 centered r">Guided by<br><em class="sc">World-Class Experts</em></h2>
+      <p class="section-intro centered r">Our hierarchical mentorship model guarantees every researcher has direct access to domain experts, editorial support, and industry perspective.</p>
+
+      <div class="org r">
+        <div class="org-level">
+          <div class="org-node org-apex">
+            <div class="on-ico">◉</div>
+            <strong>Research Director</strong>
+            <span>Strategic oversight · Publication standards · Program integrity</span>
+          </div>
+        </div>
+        <div class="org-v"></div>
+        <div class="org-level org-mid-row">
+          <div class="org-node">
+            <div class="on-ico">◎</div>
+            <strong>Research Mentors</strong>
+            <span>PhD-level subject experts · Weekly 1-on-1 sessions</span>
+          </div>
+          <div class="org-node">
+            <div class="on-ico">◎</div>
+            <strong>Publication Manager</strong>
+            <span>Journal targeting · Editing rounds · Reviewer responses</span>
+          </div>
+          <div class="org-node">
+            <div class="on-ico">◎</div>
+            <strong>Industry Advisors</strong>
+            <span>Real-world context · Commercial viability · NIW letters</span>
+          </div>
+        </div>
+        <div class="org-v"></div>
+        <div class="org-level">
+          <div class="org-node org-leaf">
+            <div class="on-ico">○</div>
+            <strong>Student Researchers</strong>
+            <span>Co-authors · Future academics · NIW applicants</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="vcard r">
+          <span class="vcard-n">I</span>
+          <h4>Mentorship First</h4>
+          <p>Every researcher is matched with a PhD mentor in their exact domain. Biweekly live sessions plus async support, for the full program duration.</p>
+        </div>
+        <div class="vcard r">
+          <span class="vcard-n">II</span>
+          <h4>Peer-Review Rigor</h4>
+          <p>All papers pass three internal review rounds — structural, technical, and linguistic — before submission. Our bar matches or exceeds the target journals.</p>
+        </div>
+        <div class="vcard r">
+          <span class="vcard-n">III</span>
+          <h4>Publication Commitment</h4>
+          <p>Research and NIW Track students receive our publication commitment. If the first submission is rejected, we revise and resubmit at no extra cost.</p>
+        </div>
+        <div class="vcard r">
+          <span class="vcard-n">IV</span>
+          <h4>Living Alumni Network</h4>
+          <p>Join 800+ published researchers across 48 countries. Quarterly virtual symposiums, a private collaboration portal, and peer-review exchange opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       04 · PROCESS TIMELINE
+  ══════════════════════════════════════ -->
+  <section class="s s-dark" id="process">
+    <div class="wrap">
+      <div class="s-label">04 / Research Process</div>
+      <div class="process-top r">
+        <h2 class="s-h2">From Idea to<br><em class="sc">Global Publication</em></h2>
+        <p class="section-intro">A proven six-phase methodology, refined across 247 published papers and hundreds of researchers. Every phase is mentored, reviewed, and optimized for acceptance.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-spine"></div>
+
+        <div class="tl-item tl-left r">
+          <div class="tl-bubble"><span>01</span></div>
+          <div class="tl-card">
+            <div class="tlc-phase">Phase One · 2–4 Weeks</div>
+            <h3>Topic Selection & Scoping</h3>
+            <p>Work 1-on-1 with your assigned mentor to identify a high-impact, publishable research question. We audit existing literature gaps, assess dataset availability, and define a rigorous scope that maximizes your probability of acceptance at target journals.</p>
+            <ul class="tlc-list">
+              <li>Gap analysis in 50+ recent papers</li>
+              <li>Feasibility and novelty assessment</li>
+              <li>Target journal pre-selection</li>
+              <li>Research proposal drafting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item tl-right r">
+          <div class="tl-bubble"><span>02</span></div>
+          <div class="tl-card">
+            <div class="tlc-phase">Phase Two · 3–5 Weeks</div>
+            <h3>Systematic Literature Review</h3>
+            <p>Conduct a structured review of 50–200 relevant papers using Semantic Scholar, IEEE Xplore, and Google Scholar. Build a comprehensive related-work narrative that clearly positions your contribution relative to the state of the art.</p>
+            <ul class="tlc-list">
+              <li>Systematic search methodology</li>
+              <li>PRISMA-style screening</li>
+              <li>Related-work section drafting</li>
+              <li>Citation graph analysis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item tl-left r">
+          <div class="tl-bubble"><span>03</span></div>
+          <div class="tl-card">
+            <div class="tlc-phase">Phase Three · 2–4 Weeks</div>
+            <h3>Dataset Collection & Preparation</h3>
+            <p>Access curated real-world datasets through our institutional partnerships, or collect new data under mentor supervision. Learn preprocessing pipelines, data augmentation strategies, class balancing, and validation splitting to ensure experimental integrity.</p>
+            <ul class="tlc-list">
+              <li>Access to 30+ curated datasets</li>
+              <li>Preprocessing and augmentation</li>
+              <li>Statistical distribution analysis</li>
+              <li>Train/val/test split methodology</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item tl-right r">
+          <div class="tl-bubble"><span>04</span></div>
+          <div class="tl-card">
+            <div class="tlc-phase">Phase Four · 4–8 Weeks</div>
+            <h3>Model Design & Training</h3>
+            <p>Design, implement, and iteratively train AI/ML models under expert technical supervision. Run ablation studies, baseline comparisons, hyperparameter searches, and full statistical significance testing to produce results that reviewers cannot reject.</p>
+            <ul class="tlc-list">
+              <li>Architecture design guidance</li>
+              <li>Ablation study design</li>
+              <li>Baseline comparison framework</li>
+              <li>Statistical significance testing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item tl-left r">
+          <div class="tl-bubble"><span>05</span></div>
+          <div class="tl-card">
+            <div class="tlc-phase">Phase Five · 4–6 Weeks</div>
+            <h3>Academic Paper Writing</h3>
+            <p>Craft a publication-ready paper in IEEE double-column or conference format. Our publication team provides three structured editing rounds — structural, technical, and linguistic — before any submission is made. Writing quality is non-negotiable.</p>
+            <ul class="tlc-list">
+              <li>IEEE / conference formatting</li>
+              <li>3 rounds of dedicated editing</li>
+              <li>Figure and table polish</li>
+              <li>Abstract and keyword optimization</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item tl-right r">
+          <div class="tl-bubble tl-bubble-gold"><span>06</span></div>
+          <div class="tl-card tl-card-gold">
+            <div class="tlc-phase">Phase Six · 4–12 Weeks</div>
+            <h3>Submission & Publication</h3>
+            <p>Submit to precisely targeted arXiv preprints, IEEE journals, or top-tier international conferences. We select the optimal venue, manage the submission portal, respond to reviewer comments with full revision support, and track your paper through to final acceptance and global indexing in Scopus and Web of Science.</p>
+            <ul class="tlc-list">
+              <li>Strategic journal selection</li>
+              <li>Reviewer response drafting</li>
+              <li>Revision and resubmission support</li>
+              <li>Scopus / WoS indexing confirmation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       05 · PROGRAMS / PRICING
+  ══════════════════════════════════════ -->
+  <section class="s" id="programs">
+    <div class="wrap">
+      <div class="s-label">05 / Programs & Investment</div>
+      <div class="programs-top r">
+        <h2 class="s-h2">Choose Your<br><em class="sc">Research Track</em></h2>
+        <p class="section-intro">Three precision-engineered programs for three distinct career stages. Every track includes mentorship, structured curriculum, and a clear path to your goal.</p>
+      </div>
+
+      <div class="pricing">
+        <!-- STARTER -->
+        <div class="pcard r">
+          <div class="pcard-tier">Starter Program</div>
+          <div class="pcard-price">$300 <span>–</span> $800</div>
+          <div class="pcard-tagline">Basic AI + Research Training</div>
+          <div class="pcard-line"></div>
+          <ul class="pcard-ul">
+            <li class="pc-yes">AI & Python fundamentals curriculum</li>
+            <li class="pc-yes">Data science methodology training</li>
+            <li class="pc-yes">Biweekly mentor sessions</li>
+            <li class="pc-yes">Mini research capstone project</li>
+            <li class="pc-yes">Certificate of Completion</li>
+            <li class="pc-yes">Alumni network access</li>
+            <li class="pc-no">Academic paper publication</li>
+            <li class="pc-no">Journal submission support</li>
+            <li class="pc-no">NIW portfolio development</li>
+          </ul>
+          <button class="pcard-btn" onclick="goTo('apply')">Get Started</button>
+          <div class="pcard-foot">Best for: High school & early university students</div>
+        </div>
+
+        <!-- RESEARCH (FEATURED) -->
+        <div class="pcard pcard-feat r">
+          <div class="feat-ribbon">★ Most Popular</div>
+          <div class="pcard-tier">Research Program</div>
+          <div class="pcard-price">$2,000 <span>–</span> $6,000</div>
+          <div class="pcard-tagline">Full Paper + Dataset Project</div>
+          <div class="pcard-line"></div>
+          <ul class="pcard-ul">
+            <li class="pc-yes">All Starter Program features</li>
+            <li class="pc-yes">Real-world dataset project</li>
+            <li class="pc-yes">Full model design & training</li>
+            <li class="pc-yes">Academic paper drafting</li>
+            <li class="pc-yes">3 rounds of professional editing</li>
+            <li class="pc-yes">arXiv preprint submission</li>
+            <li class="pc-yes">IEEE journal / conference submission</li>
+            <li class="pc-yes">Co-authorship credit</li>
+            <li class="pc-no">NIW immigration portfolio</li>
+          </ul>
+          <button class="pcard-btn pcard-btn-feat" onclick="goTo('apply')">Apply Now</button>
+          <div class="pcard-foot">Best for: University students & early-career researchers</div>
+        </div>
+
+        <!-- NIW TRACK -->
+        <div class="pcard pcard-niw r">
+          <div class="feat-ribbon niw-ribbon">◆ Premium</div>
+          <div class="pcard-tier">NIW Track</div>
+          <div class="pcard-price">$8,000 <span>–</span> $25,000</div>
+          <div class="pcard-tagline">Research + Portfolio + Immigration</div>
+          <div class="pcard-line"></div>
+          <ul class="pcard-ul">
+            <li class="pc-yes pc-gold">All Research Program features</li>
+            <li class="pc-yes pc-gold">Multi-paper publication strategy</li>
+            <li class="pc-yes pc-gold">Citation and impact building</li>
+            <li class="pc-yes pc-gold">Conference presentation support</li>
+            <li class="pc-yes pc-gold">EB-2 NIW petition strategy</li>
+            <li class="pc-yes pc-gold">Expert recommendation letters</li>
+            <li class="pc-yes pc-gold">Immigration attorney coordination</li>
+            <li class="pc-yes pc-gold">Full portfolio assembly & review</li>
+            <li class="pc-yes pc-gold">Ongoing portfolio maintenance</li>
+          </ul>
+          <button class="pcard-btn pcard-btn-niw" onclick="goTo('apply')">Book Consultation</button>
+          <div class="pcard-foot">Best for: Professionals pursuing US green card via research</div>
+        </div>
+      </div>
+
+      <div class="compare-note r">
+        <div class="cn-icon">ℹ</div>
+        <p>All programs include access to our private research portal, asynchronous learning materials, and the Hyundai Institute alumni network. Flexible payment plans available for Research and NIW Track participants. Contact us for group or institutional pricing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       06 · TESTIMONIALS
+  ══════════════════════════════════════ -->
+  <section class="s s-dark" id="testimonials">
+    <div class="wrap">
+      <div class="s-label">06 / Alumni Voices</div>
+      <h2 class="s-h2 centered r">What Our<br><em class="sc">Researchers Say</em></h2>
+
+      <div class="tgrid">
+        <div class="tcard r">
+          <div class="tcard-q">"</div>
+          <p class="tcard-body">I joined Hyundai Institute as a biology undergraduate with zero coding experience. Within nine months I was a co-author on an IEEE EMBC paper on EEG-based seizure detection. The mentorship is genuinely transformative—my mentor was available every week without exception.</p>
+          <div class="tcard-author">
+            <div class="tcard-av">JK</div>
+            <div>
+              <div class="tcard-name">Ji-yeon Kim</div>
+              <div class="tcard-role">MSc, KAIST · IEEE EMBC 2025 · South Korea</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tcard r">
+          <div class="tcard-q">"</div>
+          <p class="tcard-body">The NIW Track was the best investment I have ever made in my career. Three IEEE publications, a Scopus citation record, and a flawlessly structured EB-2 petition portfolio. My green card was approved in 8 months. Hyundai Institute delivered on every promise.</p>
+          <div class="tcard-author">
+            <div class="tcard-av">RG</div>
+            <div>
+              <div class="tcard-name">Rahul Gupta</div>
+              <div class="tcard-role">ML Engineer, Google · NIW Approved 2024 · India</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tcard r">
+          <div class="tcard-q">"</div>
+          <p class="tcard-body">I needed strong publications for my PhD applications. The Research Program gave me two arXiv preprints and an accepted IEEE paper in twelve months. I was admitted to my top three PhD programs — all credited the publications as decisive. Worth it tenfold.</p>
+          <div class="tcard-author">
+            <div class="tcard-av">SL</div>
+            <div>
+              <div class="tcard-name">Sofia Larsson</div>
+              <div class="tcard-role">PhD Candidate, ETH Zürich · Admitted 2025 · Sweden</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tcard r">
+          <div class="tcard-q">"</div>
+          <p class="tcard-body">As a full-time engineer, I was skeptical I could balance work and research. The structured async-first model made it possible. My robotics optimization paper now has 60+ citations in under a year. The publication team's reviewer response coaching was exceptional.</p>
+          <div class="tcard-author">
+            <div class="tcard-av">MO</div>
+            <div>
+              <div class="tcard-name">Marcus Obi</div>
+              <div class="tcard-role">Senior Engineer, Tesla · IEEE RA-L 2025 · Nigeria</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tcard r">
+          <div class="tcard-q">"</div>
+          <p class="tcard-body">What separates Hyundai Institute from other research programs is the ruthless focus on publication quality. They refused to submit my paper until it was genuinely ready. That rigor is what got us into IEEE Transactions on Neural Systems — a top-5 journal in my field.</p>
+          <div class="tcard-author">
+            <div class="tcard-av">CW</div>
+            <div>
+              <div class="tcard-name">Chen Wei</div>
+              <div class="tcard-role">Postdoc, Stanford · IEEE TNSRE 2025 · China</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tcard r">
+          <div class="tcard-q">"</div>
+          <p class="tcard-body">I was a high school student when I did the Starter Program. It ignited something. I came back for the Research Program in college, published my first IEEE paper at 20, and now I'm heading to Carnegie Mellon for my master's. Hyundai Institute changed my life's trajectory.</p>
+          <div class="tcard-author">
+            <div class="tcard-av">AY</div>
+            <div>
+              <div class="tcard-name">Aisha Yusuf</div>
+              <div class="tcard-role">Incoming MS, Carnegie Mellon · IEEE 2025 · Nigeria</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alumni-bar r">
+        <div class="abar-item">
+          <div class="abar-n">800+</div>
+          <div class="abar-l">Program Alumni</div>
+        </div>
+        <div class="abar-sep"></div>
+        <div class="abar-item">
+          <div class="abar-n">247+</div>
+          <div class="abar-l">Papers Published</div>
+        </div>
+        <div class="abar-sep"></div>
+        <div class="abar-item">
+          <div class="abar-n">94%</div>
+          <div class="abar-l">NIW Approval Rate</div>
+        </div>
+        <div class="abar-sep"></div>
+        <div class="abar-item">
+          <div class="abar-n">48+</div>
+          <div class="abar-l">Countries</div>
+        </div>
+        <div class="abar-sep"></div>
+        <div class="abar-item">
+          <div class="abar-n">3,200+</div>
+          <div class="abar-l">Total Citations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       07 · FAQ
+  ══════════════════════════════════════ -->
+  <section class="s" id="faq">
+    <div class="wrap">
+      <div class="s-label">07 / Frequently Asked Questions</div>
+      <h2 class="s-h2 r">Answers to<br><em class="sc">Common Questions</em></h2>
+
+      <div class="faq-grid">
+        <div class="faq-col">
+          <div class="faq-item r">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Do I need prior research or coding experience?</span>
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              <p>No prior experience is required for the Starter Program or Research Program. We teach you everything from Python fundamentals to academic writing conventions. What we require is curiosity, commitment, and the ability to dedicate 8–15 hours per week. The NIW Track assumes you have some professional or academic background in your research domain.</p>
+            </div>
+          </div>
+
+          <div class="faq-item r">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>How long does the Research Program take?</span>
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Most participants complete the six phases in 6–12 months, depending on project complexity and individual pace. Journal peer review and acceptance adds an additional 2–4 months on average. The entire journey from enrolment to global publication typically spans 9–15 months.</p>
+            </div>
+          </div>
+
+          <div class="faq-item r">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>What journals and conferences do you publish in?</span>
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              <p>We target arXiv preprints for early visibility, plus IEEE journals (TNNLS, TBME, RA-L, Transactions) and IEEE flagship conferences (EMBC, ICRA, ISCAS, ICCV). For education research: EDM, LAK, CHI. For logistics: Transportation Science, EJOR. Target venues are selected based on your paper's domain, scope, and quality level.</p>
+            </div>
+          </div>
+
+          <div class="faq-item r">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Is Hyundai Institute an accredited institution?</span>
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Hyundai Institute is an independent research organization, not a degree-granting university. Our output is real, globally-indexed publications bearing your name as co-author — which carries significantly more weight in academic admissions and immigration contexts than any internal certification. Our value is measured in publications, citations, and career outcomes, not credentials.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-col">
+          <div class="faq-item r">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>What is the NIW Track, and who should apply?</span>
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              <p>The National Interest Waiver (NIW) Track is designed for skilled foreign professionals who wish to obtain a US EB-2 green card based on their exceptional research contributions. We build a comprehensive portfolio: multiple publications, citation records, peer review evidence, and expert recommendation letters — all structured specifically for USCIS adjudication criteria. Our NIW approval rate is 94%.</p>
+            </div>
+          </div>
+
+          <div class="faq-item r">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Can I participate while working full-time?</span>
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Yes — most Research and NIW Track participants are working professionals. Our model is asynchronous-first: all learning materials, datasets, and writing tools are available 24/7. Live mentor sessions are scheduled around your time zone and availability. We recommend 8–15 hours per week for steady progress; more is welcome, less is manageable for the Starter Program.</p>
+            </div>
+          </div>
+
+          <div class="faq-item r">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>What if my paper is rejected after submission?</span>
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Research and NIW Track participants are covered by our publication commitment. If your paper is rejected, we analyze the reviewer feedback, revise the paper with you, and resubmit to an alternative venue at no additional charge. We have successfully placed papers that received initial rejections from top venues at equally prestigious alternative journals.</p>
+            </div>
+          </div>
+
+          <div class="faq-item r">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Are payment plans available?</span>
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Yes. Research Program participants may split payments into two or three installments aligned with program milestones. NIW Track participants may access structured payment plans over 6–12 months. Contact our admissions team to discuss a schedule that works for your situation. A deposit is required to secure your cohort placement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       08 · APPLY
+  ══════════════════════════════════════ -->
+  <section class="s s-apply" id="apply">
+    <div class="wrap">
+      <div class="s-label">08 / Apply Now</div>
+
+      <div class="apply-layout">
+        <div class="apply-info r">
+          <h2 class="s-h2">Begin Your<br><em class="sc">Research Journey</em></h2>
+          <p class="apply-body">
+            Join researchers from 48+ countries who have published in IEEE, arXiv,
+            and top international journals. Your research career starts with a single application—
+            reviewed personally by our admissions team within 5 business days.
+          </p>
+
+          <div class="apply-metrics">
+            <div class="apmet">
+              <div class="apmet-n">2–5 days</div>
+              <div class="apmet-l">Admission decision</div>
+            </div>
+            <div class="apmet">
+              <div class="apmet-n">Quarterly</div>
+              <div class="apmet-l">Cohort intake cycles</div>
+            </div>
+            <div class="apmet">
+              <div class="apmet-n">1-on-1</div>
+              <div class="apmet-l">Mentor matching</div>
+            </div>
+          </div>
+
+          <div class="apply-deadline">
+            <div class="ad-icon">⚠</div>
+            <div>
+              <strong>Q3 2026 Applications Close July 15, 2026</strong>
+              <span>Seats are strictly limited per research domain. Early applications are prioritized.</span>
+            </div>
+          </div>
+
+          <div class="apply-pubs">
+            <div class="ap-label">Published In</div>
+            <div class="ap-logos">
+              <span>IEEE</span>
+              <span>arXiv</span>
+              <span>Scopus</span>
+              <span>WoS</span>
+              <span>EMBC</span>
+              <span>ICRA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="apply-form-wrap r">
+          <form id="applicationForm" class="appform">
+            <div class="fg-row">
+              <div class="fg">
+                <label>Full Name *</label>
+                <input type="text" placeholder="Dr. Jane Kim" required />
+              </div>
+              <div class="fg">
+                <label>Email Address *</label>
+                <input type="email" placeholder="jane@university.edu" required />
+              </div>
+            </div>
+
+            <div class="fg-row">
+              <div class="fg">
+                <label>Current Role *</label>
+                <select required>
+                  <option value="" disabled selected>Select your role</option>
+                  <option>High School Student</option>
+                  <option>Undergraduate Student</option>
+                  <option>Graduate Student (MSc / PhD)</option>
+                  <option>Postdoctoral Researcher</option>
+                  <option>Academic Faculty</option>
+                  <option>Industry Professional</option>
+                  <option>Professional (NIW Track)</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label>Country / Region *</label>
+                <input type="text" placeholder="e.g. South Korea, USA, India" required />
+              </div>
+            </div>
+
+            <div class="fg-row">
+              <div class="fg">
+                <label>Program of Interest *</label>
+                <select required>
+                  <option value="" disabled selected>Select a program</option>
+                  <option>Starter Program ($300–$800)</option>
+                  <option>Research Program ($2,000–$6,000)</option>
+                  <option>NIW Track ($8,000–$25,000)</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label>Research Domain *</label>
+                <select required>
+                  <option value="" disabled selected>Select a domain</option>
+                  <option>Artificial Intelligence & Machine Learning</option>
+                  <option>Medical AI (EEG, MRI, Health Data)</option>
+                  <option>Autonomous Systems & Robotics</option>
+                  <option>Human Behavior & Education Analytics</option>
+                  <option>Smart Logistics & Optimization</option>
+                  <option>Other / Unsure — Help me decide</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="fg">
+              <label>Research Statement *</label>
+              <textarea rows="5" placeholder="Tell us about your research interests, specific topics you're drawn to, career goals, and what you hope to achieve through Hyundai Institute. Be as specific as possible — this helps us match you with the right mentor." required></textarea>
+            </div>
+
+            <div class="fg">
+              <label>Previous Publications or Academic Background</label>
+              <textarea rows="3" placeholder="Optional — list any papers, thesis work, or relevant projects. Leave blank if none. All backgrounds are welcome."></textarea>
+            </div>
+
+            <div class="fg">
+              <label>How did you hear about Hyundai Institute?</label>
+              <select>
+                <option value="" disabled selected>Select one</option>
+                <option>Google Search</option>
+                <option>LinkedIn</option>
+                <option>Referral from Alumnus</option>
+                <option>Academic Conference</option>
+                <option>YouTube</option>
+                <option>Social Media</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <span>Submit Application</span>
+              <span class="sb-arr">→</span>
+            </button>
+
+            <p class="form-note">We respond to all applications within 5 business days. Your information is kept strictly confidential and never shared with third parties.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top-grid">
+        <div class="ft-brand">
+          <div class="ft-logo">Hyundai<br>Institute</div>
+          <p>Where ambitious minds become published researchers. AI · Data Science · Robotics · NIW Strategy.</p>
+          <div class="ft-social">
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter / X</a>
+            <a href="#">ResearchGate</a>
+            <a href="#">arXiv</a>
+          </div>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-title">Programs</div>
+          <ul>
+            <li><a href="#programs">Starter Program</a></li>
+            <li><a href="#programs">Research Program</a></li>
+            <li><a href="#programs">NIW Track</a></li>
+            <li><a href="#apply">Apply Now</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-title">Research</div>
+          <ul>
+            <li><a href="#research">AI & Machine Learning</a></li>
+            <li><a href="#research">Medical AI</a></li>
+            <li><a href="#research">Robotics</a></li>
+            <li><a href="#research">Education Analytics</a></li>
+            <li><a href="#research">Smart Logistics</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-title">Institute</div>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#structure">Lab Structure</a></li>
+            <li><a href="#process">Research Process</a></li>
+            <li><a href="#testimonials">Alumni</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Hyundai Institute. All Rights Reserved.</span>
+        <span class="ft-mono">AI · Data Science · Robotics · Academic Publishing · NIW Strategy</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
